@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ToolboxIndiamaowei</string>
+
+    <string-array name="move_array">
+    <item>Hyperbeam</item>
+        <item>Protect</item>
+        <item>Sword Dance</item>
+    </string-array>
+
+</resources>
