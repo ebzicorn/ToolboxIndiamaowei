@@ -50,35 +50,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/pokeball" />
 
-    <RadioButton
-        android:id="@+id/radioButton1"
-        android:layout_width="@dimen/buttonWidth"
-        android:layout_height="@dimen/buttonHeight"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="Cool"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moveTextView" />
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="@dimen/buttonWidth"
-        android:layout_height="@dimen/buttonHeight"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="Normal"
+    <RadioGroup
+        android:layout_width="122dp"
+        android:layout_height="231dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton1" />
+        app:layout_constraintTop_toBottomOf="@+id/moveTextView"
+        android:id="@+id/radiogroup">
 
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="@dimen/buttonWidth"
-        android:layout_height="@dimen/buttonHeight"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
-        android:text="Cute                                                          "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="28dp"
+            android:text="Cool"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/moveTextView" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="28dp"
+            android:text="Normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton1" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="@dimen/buttonWidth"
+            android:layout_height="@dimen/buttonHeight"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            android:text="Cute"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+    </RadioGroup>
 
     <Spinner
         android:id="@+id/spinner"
