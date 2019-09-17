@@ -36,13 +36,27 @@ public int charmander = 0;
 
     }
 
-    public void onClick(View v){
+    public void onRadioClick(View v){
         RadioGroup rg = findViewById(R.id.radiogroup);
         int radioButton = rg.getCheckedRadioButtonId();
         RadioButton rb = rg.findViewById(radioButton);
         if(rb.getText().equals("cool")){
 
+            venusaur++;
+            blastois++;
+            charzard++;
+        }
+        if(rb.getText().equals("cute")){
+
             squirtle++;
+            charmander++;
+            bulbasuar++;
+        }
+        if(rb.getText().equals("normal")){
+
+            charmeleon++;
+            ivysaur++;
+            warturtle++;
         }
 
     }
