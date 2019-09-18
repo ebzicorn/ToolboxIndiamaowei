@@ -20,6 +20,7 @@ public int charmander = 0;
     public int venusaur = 0;
     public int blastois = 0;
     public int charzard = 0;
+    public int k = 0;
 
 
     @Override
@@ -60,6 +61,74 @@ public int charmander = 0;
         }
 
     }
+
+    public void spinnerAction(View v) {
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        String text = spinner.getSelectedItem().toString();
+
+        if (text.equals("Hyperbeam")) {
+            charzard++;
+            bulbasuar++;
+            warturtle++;
+
+        }
+        if (text.equals("Protect")) {
+            blastois++;
+            charmander++;
+            venusaur++;
+
+        }
+        if (text.equals("Sword Dance")) {
+            ivysaur++;
+            squirtle++;
+            charmeleon++;
+
+        }
+    }
+
+     public void onCheckedClick1(View v){
+        k++;
+        if(k == 1){
+            charmander++;
+            charmeleon++;
+            charzard++;
+        }
+        else{
+            charmander = charmander +2;
+            charmeleon = charmeleon +2;
+            charzard = charzard +2;
+        }
+        }
+    public void onCheckedClick2(View v){
+        k++;
+        if(k == 1){
+            squirtle++;
+            warturtle++;
+            blastois++;
+        }
+        else{
+            squirtle = squirtle +2;
+            warturtle = warturtle +2;
+            blastois = blastois +2;
+        }
+
+    }
+    public void onCheckedClick3(View v){
+        k++;
+        if(k == 1){
+            bulbasuar++;
+            venusaur++;
+            ivysaur++;
+        }
+        else{
+            bulbasuar = bulbasuar +2;
+            venusaur = venusaur +2;
+            ivysaur = ivysaur +2;
+        }
+      
+    }
+
+
 
 
 
