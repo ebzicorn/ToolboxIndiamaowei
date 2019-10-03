@@ -13,19 +13,25 @@
         android:layout_height="@dimen/buttonHeight"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
-        android:text="Normal"
+        android:text="Red"
+        android:onClick="onCheckedClick1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTextView" />
 
-    <ImageButton
+    <Button
         android:id="@+id/goButton"
         android:layout_width="@dimen/buttonWidth"
         android:layout_height="@dimen/buttonHeight"
-
         android:layout_marginEnd="44dp"
         android:layout_marginBottom="64dp"
         android:adjustViewBounds="true"
+        android:background="@drawable/pokeball"
+        android:drawable="@drawable/pokeball"
         android:scaleType="fitCenter"
+        android:text="GO"
+        android:onClick="finalClick"
+
+        android:textSize="@dimen/txt"
         app:layout_constraintBottom_toTopOf="@+id/switch1"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/pokeball" />
@@ -98,6 +104,7 @@
         android:layout_height="@dimen/txtHeight"
         android:layout_marginStart="68dp"
         android:text="Do You Like The Color ..."
+        android:textColor="@color/colorAccent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,6 +114,7 @@
         android:layout_height="@dimen/txtHeight"
         android:layout_marginStart="16dp"
         android:layout_marginTop="236dp"
+        android:textColor="@color/colorAccent"
         android:text="Do You Want Your Partner To Be ..."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTextView" />
@@ -117,7 +125,8 @@
         android:layout_height="@dimen/buttonHeight"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="44dp"
-        android:text="Cute"
+        android:text="Blue"
+        android:onClick="onCheckedClick2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTextView" />
 
@@ -127,7 +136,18 @@
         android:layout_height="@dimen/buttonHeight"
         android:layout_marginStart="140dp"
         android:layout_marginTop="96dp"
-        android:text="Cool"
+        android:text="Green"
+        android:onClick="onCheckedClick3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTextView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="132dp"
+        android:layout_height="109dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/pokeball" />
 </androidx.constraintlayout.widget.ConstraintLayout>

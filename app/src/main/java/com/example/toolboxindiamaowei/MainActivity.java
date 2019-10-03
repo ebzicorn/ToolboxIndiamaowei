@@ -2,24 +2,21 @@ package com.example.toolboxindiamaowei;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-public int charmander = 0;
-    public int squirtle = 0;
-    public int bulbasuar = 0;
-    public int charmeleon = 0;
-    public int ivysaur = 0;
-    public int warturtle = 0;
-    public int venusaur = 0;
-    public int blastois = 0;
-    public int charzard = 0;
+    int[] intArray = new int[]{ 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
+
     public int k = 0;
 
 
@@ -43,21 +40,21 @@ public int charmander = 0;
         RadioButton rb = rg.findViewById(radioButton);
         if(rb.getText().equals("cool")){
 
-            venusaur++;
-            blastois++;
-            charzard++;
+            intArray[6]++;
+            intArray[7]++;
+            intArray[8]++;
         }
         if(rb.getText().equals("cute")){
 
-            squirtle++;
-            charmander++;
-            bulbasuar++;
+            intArray[1]++;
+            intArray[0]++;
+            intArray[2]++;
         }
         if(rb.getText().equals("normal")){
 
-            charmeleon++;
-            ivysaur++;
-            warturtle++;
+            intArray[3]++;
+            intArray[4]++;
+            intArray[5]++;
         }
 
     }
@@ -67,21 +64,21 @@ public int charmander = 0;
         String text = spinner.getSelectedItem().toString();
 
         if (text.equals("Hyperbeam")) {
-            charzard++;
-            bulbasuar++;
-            warturtle++;
+            intArray[8]++;
+            intArray[2]++;
+            intArray[5]++;
 
         }
         if (text.equals("Protect")) {
-            blastois++;
-            charmander++;
-            venusaur++;
+            intArray[7]++;
+            intArray[0]++;
+            intArray[6]++;
 
         }
         if (text.equals("Sword Dance")) {
-            ivysaur++;
-            squirtle++;
-            charmeleon++;
+            intArray[4]++;
+            intArray[1]++;
+            intArray[3]++;
 
         }
     }
@@ -89,46 +86,115 @@ public int charmander = 0;
      public void onCheckedClick1(View v){
         k++;
         if(k == 1){
-            charmander++;
-            charmeleon++;
-            charzard++;
+            intArray[0]++;
+            intArray[3]++;
+            intArray[8]++;
         }
         else{
-            charmander = charmander +2;
-            charmeleon = charmeleon +2;
-            charzard = charzard +2;
+            intArray[0] = intArray[0] +2;
+            intArray[3] = intArray[3] +2;
+            intArray[8] = intArray[8] +2;
         }
         }
     public void onCheckedClick2(View v){
         k++;
         if(k == 1){
-            squirtle++;
-            warturtle++;
-            blastois++;
+            intArray[1]++;
+            intArray[5]++;
+            intArray[7]++;
         }
         else{
-            squirtle = squirtle +2;
-            warturtle = warturtle +2;
-            blastois = blastois +2;
+            intArray[1] =  intArray[1] +2;
+            intArray[5] = intArray[5] +2;
+            intArray[7] = intArray[7] +2;
         }
 
     }
     public void onCheckedClick3(View v){
         k++;
         if(k == 1){
-            bulbasuar++;
-            venusaur++;
-            ivysaur++;
+            intArray[2]++;
+            intArray[4]++;
+            intArray[6]++;
         }
         else{
-            bulbasuar = bulbasuar +2;
-            venusaur = venusaur +2;
-            ivysaur = ivysaur +2;
+            intArray[2] = intArray[2] +2;
+            intArray[4] = intArray[4] +2;
+            intArray[6] = intArray[6] +2;
         }
       
     }
 
+    public void finalClick(View v){
+        spinnerAction(v);
+        Switch mySwitch = findViewById(R.id.switch1);
+        ImageView poke = findViewById(R.id.imageView);
+        int r = 0;
+        for(int j = 1; j< intArray.length; j++)
+        {
 
+            if(intArray[j] > r){
+                r = j;
+            }
+            j++;
+        }
+
+        if(r == 0 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.charmander);
+        }
+        else if (r == 0 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.torchic);
+        }
+        else if(r == 1 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.squirtle);
+        }
+        else if (r == 1 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.mudkip);
+        }
+        else if(r == 2 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.bulbasaur);
+        }
+        else if (r == 2 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.treecko);
+        }
+        else if(r == 3 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.charmeleon);
+        }
+        else if (r == 3 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.combusken);
+        }
+        else if(r == 4 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.warturtle);
+        }
+        else if (r == 4 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.marshtomp);
+        }
+        else if(r == 5 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.ivysaur);
+        }
+        else if (r == 5 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.grovile);
+        }
+        else if(r == 6 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.charzard);
+        }
+        else if (r == 6 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.blazakin);
+        }
+        else if(r == 7 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.blastoise);
+        }
+        else if (r == 7 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.swampert);
+        }
+        else if(r == 8 && mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.venusaur);
+        }
+        else if (r == 8 && !mySwitch.isChecked()){
+            poke.setImageResource(R.drawable.sceptile);
+        }
+
+    }
 
 
 
